@@ -1,6 +1,8 @@
-## Welcome to GitHub Pages
+## Estatística Multivariável - Identificação de Outliers
 
-You can use the [editor on GitHub](https://github.com/MariaClaraMendes/Portfolio-/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+1. Introdução 
+
+A tarefa 1 consiste em descrever e analisar a distribuição de 5 vazões de processo e identificar outliers. Supõe-se que as variáveis estejam em estado estacionário, ou seja, que a variável tempo não tenha correlação com as vazões e as medidas em relação ao tempo são independentes entre si. As séries históricas das cinco vazões são mostradas na Figura 1.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
