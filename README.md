@@ -1,8 +1,8 @@
-## Estatística Multivariável - Identificação de Outliers
+## Projeto 1: Estatística Multivariável - Identificação de Outliers
 
 1. Introdução 
 
-A tarefa 1 consiste em descrever e analisar a distribuição de 5 vazões de processo e identificar outliers. Supõe-se que as variáveis estejam em estado estacionário, ou seja, que a variável tempo não tenha correlação com as vazões e as medidas em relação ao tempo são independentes entre si. As séries históricas das cinco vazões são mostradas na Figura 1.
+O projeto consiste em descrever e analisar a distribuição de 5 vazões de processo e identificar outliers. Supõe-se que as variáveis estejam em estado estacionário, ou seja, que a variável tempo não tenha correlação com as vazões e as medidas em relação ao tempo são independentes entre si. As séries históricas das cinco vazões são mostradas na Figura 1.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
