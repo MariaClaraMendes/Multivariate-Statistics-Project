@@ -1,6 +1,6 @@
 ## Projeto 1: Estatística Multivariável - Identificação de Outliers
 
-1. Introdução 
+## 1. Introdução 
 
 O projeto consiste em descrever e analisar a distribuição de 5 vazões de processo e identificar outliers. Supõe-se que as variáveis estejam em estado estacionário, ou seja, que a variável tempo não tenha correlação com as vazões e as medidas em relação ao tempo são independentes entre si. As séries históricas das cinco vazões são mostradas na Figura 1.
 
@@ -8,17 +8,15 @@ O projeto consiste em descrever e analisar a distribuição de 5 vazões de proc
       
 ![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.1.PNG)
 
-2. Método
+## 2. Método
 
 Os parâmetros descritivos da amostra são dados pelas equações 1. Os intervalos de confiança foram calculados pela distribuição de t de Student para a média e χ2 para a variância, considerando 95% de confiança. Supõe-se que a distribuição das variáveis siga uma distribuição normal e o quadrado distância estatística dada por Mahalanobis segue a distribuição χ2. Portanto, para identificar os outliers monovariáveis foi considerado 2 vezes o valor do desvio padrão em relação a média, o que representa mais de 95% de uma distribuição normal; para identificar os multivariáveis, 90% de confiança da distribuição χ2 foi utilizado.
 
 ![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%202.PNG)
 
-3. Análise
+## 3. Análise
 
 Numa comparação visual das séries históricas mostradas na Figura 1, já é possível identificar outliers e possíveis correlações das variáveis. Evidencia-se que a vazão 1 não correlaciona com as demais e também que as vazões restantes estão de alguma forma relacionadas entre si. Outliers são vistos em todas as vazões exceto em x1. A seguir são analisadas a amostragem das cinco vazões.
-
-3.2. Estatística Multivariável
 
 A matriz de correlação e covariancia entre as variáveis de vazão estão mostradas nas Tabelas 2 e 3. Com já observado na comparação entre as séries históricas, a vazão não se correlaciona com as demais vazões. Os coeficientes de correlação entre as vazões são muito baixos, menores que 0.15. Por outro lado, x3 e x2 parecem bem correlacionadas, bem como x4 e x5, com valores acima de 0.90. A variável x2 correlaciona-se de alguma forma com as demais vazões (x3, x4, x5) com valores ao redor 0.9.
 
@@ -32,7 +30,7 @@ Para identificar outliers multivariáveis, a distância estatística das observa
                
    ![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
 
-4. Conclusão
+## 4. Conclusão
 
 A análise feita nos dados das vazões revelou que a vazão x1 não se correlaciona com as demais, além de não tender à uma distribuição normal. Possivelmente erros sistemáticos podem ter ocorrido na coleta. As demais vazões correlacionam-se linearmente, sendo os pares de vazões (x2, x3) e (x4, x5) os mais correlacionados entre si. No total, 3 outliers puderam ser identificados correspondendo ao tempo de coleta 18, 32 e 42h. Somente o de 18h pode ser identificado monovarialmente, equanto os demais pela análise multivariável da distância estatística.
 
