@@ -61,6 +61,7 @@ O projeto 2 consiste no estudo de caso de reconciliação de dados em uma planta
 
 Os dados brutos foram tratados por meio da eliminação de outliers multivariados. Considerando que os ruídos são variáveis randômicas que seguem a distribuição normal, a identificação e exclusão dos outliers foi feita calculando-se o quadrado da distância de Mahalanobis das observações em relação à média. Já que essa distância ao quadrado comporta-se como uma distribuição χ2, o critério de exclusão foi estabelecido pela teste de hipótese de pertencimento para 95% de confiança monocaudal. Os cálculos foram feitos por meio de rotinas implementadas em Python 3.
 
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Fig1.PNG)
 Figura 1: Esquema de associação das correntes de uma planta de isopropeno
 
 #### 2.2. Identificação de Erros Sistemáticos
@@ -68,19 +69,25 @@ Figura 1: Esquema de associação das correntes de uma planta de isopropeno
 A identificação de possíveis erros sistemáticos foi feita em duas etapas: (i) teste para verificação global de erro sistemático e (ii) identificação da vazão com erro grosseiro, caso (i) for positivo. O problema de reconciliação de dados para o presente caso é tratado como um problema de minimização do erro quadrático entre o valor da variável medido (y) e o "verdadeiro"(x), sujeito à equação de conservação de massa (equação 1b), resultando em
 
 equação 1a
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Eq1.PNG)
 equação 1b
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Eq2.PNG)
 
 Sabe-se que o valor da função objetivo no ponto ótimo corresponde a equação 2
 
 equação 2
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Eq3.PNG)
 
 onde
 
 equação 3
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Eq3.PNG)
 
 e
 
 equação 4
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Eq4.PNG)
+
 
 Tal razão segue uma distribuição χ2; portanto, um teste de pertencimento à essa distribuição com 90% de confiança será realizado, constituindo-se na etapa (i).
 Se houver erro grosseiro, cada variável será testada para identificar em qual delas ele está presente (etapa (ii)). Como o sistema para reconciliação é redundante em medidas, o teste consiste em eliminar uma das variáveis na função objetivo e verificar o valor dessa função no ponto ótimo. Os valores da função objetivo obtidos com a retirada de diferentes variáveis serão comparados. O critério para determinar a vazão com erro será dada por aquela vazão que apresentar o menor erro quadrático quando retirada do processo de minimização, ou seja, quando for estimada somente pelo balanço de massa. Para o cálculo de otimização foi utilizado o MS Excel 2007.
@@ -92,8 +99,10 @@ Se houver erro grosseiro, cada variável será testada para identificar em qual 
 Os dados brutos foram tratados e cerca de 6% foram considerados outliers. Os histogramas e os parâmetros de média e variância são mostrados na Figura 2 e na Tabela 1.
 
 Figura 2: Distribuição das vazões F1, F1A, F2 e F3, coletadas ao longo de um ano da planta de isopropeno.
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Fig2.PNG)
 
 Tabela 1: Parâmetros descritivos da distribuição das vazões F1, F2, F1A e F3.
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/2.Tab1.PNG)
 
 #### 3.2. Identificação de Erros Sistemáticos
 
