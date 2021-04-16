@@ -118,3 +118,73 @@ as demais vazões, comparando os valores da função objetivo obtidas. Todos os 
 
 Uma vez que as varáveis medidas compõem um sistema redundante para a reconciliação de
 dados, é simples identificar a presença de erros sistemáticos. O procedimento ocorreu em duas principais etapas. A primeira indicou globalmente a presença de erros grosseiros. A segunda detectou que a vazão F3 continha erro sistemático, que retirava cerca de 758 kg/h do valor final. Portanto, recomenda-se a calibração do medidor ou o acréscimo desse valor nos cálculos. Pode-se verificar também se não há vazamentos na tubulação.
+
+
+### Projeto 3: Estatística Multivariável - Principal Component Analysis (PCA)
+
+### 1. Introdução 
+A tarefa consiste na análise de componentes principais de uma unidade de evaporação de licor (N aCl(aq) e N aOHaq), constituída por três evaporadores em série, como mostra a Figura 1. O licor e o vapor para aquecimento fluem em contracorrente. 
+
+Figura 1: Variância e Variância Acumulada em Função do Número de Componentes Principais.
+   
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.fig.1.PNG)
+
+A nomeação das variáveis é dada pela Tabela 1.
+
+Tabela 1: Referência das variáveis
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.tab.1.PNG)
+
+### 2. Método
+
+#### 2.1. Tratamento de Dados
+
+Os dados brutos foram tratados por meio da eliminação de outliers multivariados. Considerando que os ruídos são variáveis randômicas que seguem a distribuição normal, a identificação e exclusão dos outliers foi feita calculando-se o quadrado da distância de Mahalanobis das observações em relação à média. Já que essa distância ao quadrado comporta-se como uma distribuição χ2, o critério de exclusão foi estabelecido pelo teste de hipótese de pertencimento para 95% de confiança monocaudal. Os cálculos foram feitos por meio do software R.
+
+#### 2.2. Análise de Componentes Principais - PCA
+
+Uma análise de componentes principais preocupa-se em explicara estrutura da variância-covariância de um conjunto de variáveis através de algumas combinações lineares dessas variáveis. Os objetivos gerais da aplicação de PCA são (1) redução de dados e (2) interpretação.
+Embora os componentes p sejam necessários para reproduzir a variabilidade total do sistema, muitas vezes grande parte dessa variabilidade pode ser explicada por um pequeno número de componentes principais. Em caso afirmativo, há (quase) tanta informação nos componentes k como nas variáveis p originais. Os componentes principais k podem então substituir as variáveis p iniciais e o conjunto de dados original, consistindo de n medições em p variáveis, é reduzido a um conjunto de dados que consiste em n medições em k componentes
+principais.
+Uma análise dos componentes principais frequentemente revela relacionamentos que não
+foram previstos e, portanto, permite interpretações que normalmente não seriam levadas em consideração. A análise de componentes principais transforma a base de variáveis em uma nova base com componentes (as novas variáveis) não correlacionados e de máxima variância com objetivo de reduzir o número de variáveis ou mesmo de identificar as variáveis que mais representam osistema. Isso corresponde atransformar as variáveis iniciais Xi nos componentes Yi de tal forma que
+
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.eq.1a.PNG)
+
+
+sendo 
+
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.eq.1b.PNG)
+
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.eq.1c.PNG)
+
+
+as matrizes de covariância e a matriz com seus autovetores unitários, respectivamente.
+Como o caso em estudo compreende variáveis distintas, como temperatura e pressão, a
+troca de base para a dos componentes principais não será feita, somente a identificação das variáveismais importantes do processo. As variáveis serão normalizadas, amatriz de correlação calculada e será feita também a sua decomposição espectral. Dentre os diversos critérios para determinar os componentes principais, o critério da importância relativa dos componentes será levado em conta, uma vez que a intenção é identificar somente as principais variáveis. Caso fosse a intenção de mudar a base do sistema, seria mais interessante utilizar o critério da variância acumulada, por exemplo.
+
+A partir da determinação dos principais componentes, as variáveis mais importantes serão
+determinadas como sendo aquelas que contribuem mais para explicar os principais componentes, ou seja, aquelas que apresentarem os maiores loadings.
+Análises de componentes principais são mais um meio para um fim do que um fim deles
+mesmo, pois eles frequentemente serverm como passos intermediários em investigações maiores. Por exemplo, os componentes principais podem ser entradas para uma regressão, bem como, para análise de clusters, e até mesmo, seleção de variáveis para alimentar redes neurais.
+
+### 3. Resultados e Discussão
+
+Dos dados brutos coletados, 12% foram considerados outliers e excluídos da análise de componentes principais. A análise sobre as variáveis padronizadas forneceu a Figura 2, sendo à esquerda, um scree plot da variância (número de PC’s em função da magnitude dos autovalores) e à direita, o gráfico da variância acumulada em função do número de PC’s. Como o objetivo da tarefa é identificar as variáveis mais relevantes estatisticamente para o processo, somente os três primeiros componentes foram selecionados, visto que, observando o scree plot da esquerda, a partir do PC3 não há tanta influência na magnitude dos autovalores. O PC1 explica a metade da variância dos dados, já os PC2 e PC3 explicam 20% dos dados.
+
+Figura 2: Variância e Variância Acumulada em função do número de PC’s.
+   
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.2.PNG)
+
+A partir desses componentes, as contribuições individuais de cada variável para os componentes, os loadings, é mostrado na Figura 3. Observa-se que, as variáveis mais representativas, são X6 e a X8 no PC1 que corresponde à pressão no primeiro evaporador e à temperatura de alimentação do segundo evaporador. Tal fato deve-se à alta demanda energética do primeiro evaporador e sua influência na cadeia de calor nos demais evaporadores. Em seguida, tem-se as variáveis X4 e X7 no PC2, correspondente à pressão e à temperatura do evaporador 3. O terceiro evaporador influencia nos demais em relação à alimentação e sua composição. Apesar de não aparecer com as variáveismais importantes do sistema, aparecendo apenas no PC3, a vazão (X3) e a temperatura de alimentação (X1), não podem ser ignoradas. Pela análise o evaporador 2 é o mais dependente dos evaporadores e, portanto, tem menos influência na variância dos dados.
+
+Figura 3: Os loadings de cada variável na composição dos PC’s (PC1, PC2 e PC3).
+   
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+
+### 4. Conclusão
+
+A aplicação da análise de componentes principais nesse conjunto de dados foi bastante satisfatória, uma vez que reduziu o número de variáveis para menos da metade (46%). Não é, exatamente, uma análise com 100% de confiabilidade, pois há de se fazer considerações com base nas variáveis envolvidas, contudo, as variáveis selecionadas são consistentes e coerentes.
