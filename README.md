@@ -198,7 +198,7 @@ A tarefa consiste na análise de cluster em dados de uma unidade de evaporação
 
 Tabela 1: Referência das Variáveis
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.tab1.PNG)
 
 A Figura 1 exemplifica o fluxograma do processo de evaporação de licor. As variáveis a
 serem analisadas no processo estão ilustradas em cada etapa do processo.
@@ -206,7 +206,7 @@ serem analisadas no processo estão ilustradas em cada etapa do processo.
 Figura 1: Fluxograma simplificado da unidade de evaporação. As variáveis estão mostradas
 juntamente com a identificação nos dados brutos.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig1.PNG)
 
 
 ### 2. Método
@@ -234,8 +234,7 @@ linkage, com uma exceção importante: em cada estágio, a distância (similarid
 A ligação média trata a distância entre dois clusters como a distância média entre todos os pares de itens em que um membro de um par pertence a cada cluster.
 A distância utilizada nessa tarefa é a Euclidiana, definida por
 
-eq 1
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.eq1.PNG)
 
 
 #### 2.2. Métodos de Agrupamento Não - Hieráquicos
@@ -270,7 +269,7 @@ a separação será complicada, uma vez que não há muita diferença nos dados 
 
 Figura 2: Dendograma produzido pelo método hierárquico de aglomeração Single Linkage.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig2.PNG)
 
 O método Single Linkage tende a agrupar itens que estão de alguma forma conectados
 (efeito chaining) e consegue com mais clareza dividir grupos que estão claramente separados. Entretanto, cluster que possuem muito ruído, ou seja, que não se separam com clareza não são identificados pelo método.
@@ -279,7 +278,7 @@ cada cluster. Dessaforma, variações nesses valores demédia apontam que a vari
 
 Figura 3: Matriz das Médias das Variáveis em cada Cluter
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig3.PNG)
 
 
 ##### 3.1.2. Average Linkage
@@ -289,13 +288,13 @@ clusters de forma mais visual, facilitando a identificação dos grupos.
 
 Figura 4: Matriz das Médias das Variáveis em cada Cluter
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.4.PNG)
 
 A matriz das médias para este método é observada na Figura 5 a seguir. É possível observar a partir dessa seleção que o cluster 3 possui valores discrepantes para as variáveis X4 (pressão no estágio 3) , X5 (pressão no estágio 2), X7 (temperatura no estágio 3) e X8 (temperatura no estágio 2). Dessa forma, infere-se que o cluster 3 alocou os dados com maiores valores observados de pressão e temperatura e os demais clusters os valores observadosmédios e baixos dessas variáveis.
 
 Figura 5: Matriz das Médias das Variáveis em cada Cluter
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig5.PNG)
 
 ##### 3.1.3. Complete Linkage
 
@@ -304,21 +303,21 @@ de corte igual a 9, mostrando grupos mais bem divididos que os métodos anterior
 
 Figura 6: Dendograma produzido pelo método hierárquico de aglomeração Complete Linkage
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig6.PNG)
 
 A matriz das médias para esse método pode ser observado na Figura 7 abaixo. Este método
 não mostrou valores de variáveis discrepantes da média, sendo portanto, mais consistente.
 
 Figura 7: Matriz das Médias das Variáveis em cada Cluter
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig7.PNG)
 
 As Figuras (8, 9 e 10) a seguir nos mostram uma melhor visualização dos clusters propostos pelos métodos aplicados.
 A Figura 8mostra a alocação dos dados para as variáveis X4 e X5 em 3 grupos. Como observado no Dendrograma, o método single não consegue separar bem os dados dos grupos, uma vez que o método não faz muita distinção nos valores, devido a sua metodologia de vizinho mais próximo. Dessa forma, como os dados não apresentam valores discrepantes entre si, em sua maioria, mesmo as variáveis X4 e X5 que apresentaram distinção nas matrizes das médias, não foi possível observar a divisão de forma interessante.
 
 Figura 8: Alocação de dados das variáveis X4 e X5 a partir do método Single Linkage
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig8.PNG)
 
 A Figura 9 a seguir mostra a aplicação do método average para a divisão dos grupos. Já é
 possível observar umamelhorseparação dos grupos,mostrando que o grupo 2 alocou os dados
@@ -326,7 +325,7 @@ intermediários de pressão no estágio 2 e 3, pressões de valores baixos no gr
 
 Figura 9: Alocação de dados das variáveis X4 e X5 a partir do método Average Linkage
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig9.PNG)
 
 Já o método complete mostrou uma maior extensão para valores altos de pressão nos está-
 gios 2 e 3, porém, com uma margem maior que a do método average, como mostra a Figura
@@ -335,7 +334,7 @@ visualmente aparentam se conectar aos outros de forma mais invasiva que o métod
 
 Figura 10: Alocação de dados das variáveis X4 e X5 a partir do método Complete Linkage
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig10.PNG)
 
 #### 3.2. Métodos Não-Hierárquicos 
 
@@ -347,39 +346,39 @@ variação dentro do grupo. Este teste refere-se a variações causadas por dife
 
 Figura 11: Scree Plot: número de clusters possíveis versus WSS
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.11.PNG)
 
 Neste caso, o número de clusters é escolhido com base a minimizar a variabilidade de dados para manter uma maior similaridade entre eles. A partir disso, escolhe-se um número de clusters onde a WSS não possui grande variabilidade. No gráfico pode ser observado que a partir do número de cluster 5 WSS já não tem tanta variação em relação ao WSS seguinte. A Figura 12 fornece o número de dados alocados em cada cluster.
 
 Figura 12: Scree Plot: Número de clusters possíveis versus WSS
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.12.PNG)
 
 Além dos dados alocados em cada cluster, é possível ainda observar a média dos valores de cada variável em cada cluster na Figura 13. Através dos dados expostos, percebe-se que não há discrepâncias nos valores das médias, indicando uma distribuição similar nos valores entre os clusters.
 
 Figura 13: Tabela de médias das variáveis em cada cluster para o método K-Means.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.13.PNG)
 
 Na Figura 14 é possível observar as características das variáveis x4 e x5 em cada um dos clusters obtidos anteriomentes. Os grupos 1 e 5 são os dados mais extremos, sendo assim, os que estão menos interligados aos outros dados. São representações de pressões maiores e menores nos respectivos estágios. Os grupos 2, 3 e 4 representam os dados de valores intermediários das pressões do sistema com ranges de valores diferentes.
 
 Figura 14: Alocação de dados das variáveis X4 e X5 a partir do método K-Means.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.14.PNG)
 
 ##### 3.2.2. Clustering de Variáveis
 
 Além de classificar os dados em grupos, é possível ainda fazer agrupamento de variáveis. Ou seja, são grupos de variáveis que estão intimamente relacionadas entre si e, portanto, trazem o mesmo em formação. Esta abordagem pode ser útil para redução de dimensão e seleção de variável. No software R possui o pacote ClustOfVar especificamente desenvolvido para este fim. O software disponibiliza um dendrograma das variáveis e, para uma altura de 0.8, encontra-se um número de grupos igual a 5. As variáveis ficam distribuídas daseguintemaneira observados na Figura 15:
 
-Figura 14: Dendrograma de Váriaveis.
+Figura 15: Dendrograma de Váriaveis.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.15.PNG)
 
 A Tabela 16 abaixo lista a distribuição de variáveis em grupos.
 
 Figura 16: Tabela com a distribuição de Variáveis por grupo.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/3.Fig.3.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/4.fig.16.PNG)
 
 
 ### 4. Conclusão
