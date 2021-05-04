@@ -384,3 +384,117 @@ Figura 16: Tabela com a distribuição de Variáveis por grupo.
 ### 4. Conclusão
 
 De acordo com todos os dados apresentados, pode-se perceber que as técnicas hierárquicas, em geral, não representou bem o grupo de dados. O método single não caracterizou bem os grupos, enquanto que o average e o complete foram bem semelhantes no tratamento. Ainda assim, não apresentaram resultados satisfatórios. Já a técnica não-hierárquica (K-Means) conseguiu representar o grupo de dados de forma satisfatória, mostrando um número razoável de grupos para a análise de dados. Dessa forma, todas as análises a partir de agora, serão tratadas pela técnica não-hierárquica k-means.
+
+
+### Projeto 5: Estatística Multivariável - Discriminantes
+
+### 1. Introdução 
+
+O projeto consiste na aplicação de técnicas de análise de discriminantes em dados de uma unidade de evaporação de licor (N aCl(aq) e N aOHaq), constituída por três evaporadores em série. O licor e o vapor para aquecimento fluem em contracorrente. A nomeação das variáveis é dada pela Tabela 1. A tarefa tem por objetivo estudar as técnicas estatísticas e analisar a separação dos dados em questão em diferentes grupos. A técnica baseia-se na criação de um "discriminante", ou seja, um critério quatitativo para separar observações em grupos, com máxima distância entre si. A Tabela 1 lista as variáves do estudo de caso.
+
+Tabela 1: Referência das variáveis
+      
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.1.PNG)
+
+### 2. Método
+
+#### 2.1. Técnica de Análise de Discriminantes
+
+Discriminação e classificação são técnicas multivaridas relacionadas com separação de objetos (ou observações) em conjuntos distintos e alocação de novos objetos (observações) em grupos previamente definidos. A análise de discriminante é de natureza exploratória. Como é um procedimento separativo, é frequentemente empregado numa base de dados uma única vez para investigar as diferenças observadas quando as relações causais não são bem entendidas. Os procedimentos de classificação são menos exploratórios, no sentido de que eles possuem regras bem definidas, as quais podem ser usadas para atribuir novos objetos. A classificação normalmente requer mais estrutura de problemas do que a discriminação.
+
+Assim, os objetivos imediatos de discriminação e classificação são, respectivamente:
+Objetivo 1: Descrever, graficamente (em três ou menos dimensões) ou algebricamente, as
+características diferenciais dos objetos (observações) de vários agrupamentos conhecidos (populações). Tenta-se encontrar "discriminantes"cujos valores numéricos são tais que os agrupamentos são separados no máximo possível. Objetivo 2: Classificar objetos (observações) em duas ou mais classes rotuladas. A ênfase está ma derivação de uma regra que pode ser usada para otimizar a atribuição de novos objetos às classes rotuladas.
+
+Usa-se o termo discriminação para referir-se ao objetivo 1. Esta terminologia foi introduzida pelo Ronald Aylmer Fisher no primeiro tratamento moderno de problemas separativos; Um termo mais descritivo para esse objetivo, no entanto, é a separação. Refere-se ao segundo objetivo como classificação.
+Uma função que separa objetos, ás vezes, pode servir como um alocador e , por outro lado, uma regra que aloca objetos pode sugerir um procedimento discriminatório. Na prática, os objetivos 1 e 2 frequentemente se sobrepõem e a distinção entre discriminação e classificação torna-se vaga.
+Foi utilizado o software R studio para realizar a aplicação da análise de discriminantes.]
+
+### 3. Resultados e Discussão
+
+A análise de discriminantes requer que as observações estejam previamente separadas em
+populações diferentes. De acordo com a Tarefa anterior de clusters e os resultados obtidos com a comparação das técnicas hierárquicas e não-hierárquicas, optou-se pelo método K-Means, com número de 3 clusters, uma vez que, o aumento desse valor nos leva a valores de distâncias pouco variados, o que nos levaria a uma análise não muito interessante, visto que a técnica de discriminante requer valores bem distintos de distância. No software R, os dados foram particionados randomicamente, e 80% deles dados foram utilizados na discriminação para obter a função discriminante e os 20% restantes foram utilizados na classificação de novos indivíduos nos grupos. A Figura 1 expõe a partição dos dados referentes as variáveis X4 e X5 em training (80%) e testing (20%), para exemplificar. 
+
+Figura 1: Partição randômica dos dados das variáveis X4 e X5 em training e testing.
+             
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+
+Como dito, os dadosforamagrupados, anteriormente, em 3 clusters pelométodoK-Means,
+apresentando umamatriz dasmédias para cada uma das variáveis observada na Tabela 2 abaixo.
+
+Tabela 2: Matriz das médias em cada cluster para cada variável.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+
+#### 3.1. Discriminante Linear
+
+A partir dos dados particionados e das médias de cada variável em cada cluster, calcula-se os coeficientes dos discriminantes lineares, a partir da função lda() observados na Figura 3 abaixo:
+
+Tabela 3: Coeficientes das variáveis nos discriminantes LD1 e LD2.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+
+Tais coeficientesrepresentam os pesos de cada variável em cada discriminante. Dessaforma, como este descriminante é linear, obtemos uma expressão para cada discriminante em função de cada variável, como observado nas equações abaixo:
+
+Eq. 1
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+
+Eq. 2
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+
+
+Nesta análise, pode-se observar quais são as variáveis que mais se destacam nos discriminantes gerados, a partir do seu peso. Neste caso, a variável X13 possui maior peso em módudo no discriminante LD1 e a variável X10 no discriminante LD2.
+A função lda()fornece ainda a porcentagem deseparação alcançada por cada discriminante.
+O discriminante LD1 alcançou uma proporção de separação de 92.54% e o discriminante LD2
+7.46%. Neste caso, observa-se que houve sucesso na discriminação dos dados por parte da
+primeira função de discriminante aplicada.
+A partir da determinação de discriminantes, observa-se a inteferência de cada um destes
+nos grupos, previamente separados. A Figura 2 ilustra essa interferência.
+
+Figura 2: LD1 versus LD2
+               
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+
+Neste caso, percebe-se que o grupo 3 não possui grande interferência do discriminante
+LD2, uma vez que pela matriz das médias, observamos que este grupo foi agrupado com os
+menores valores demédia, dentre os 3 grupos.Dessa forma, concentrou osmenores valores dos dados particionados.
+As Figuras 3 e 4 ilustradas a seguir, representam os alcances de separação das funções discriminantes LD1 e LD2.
+
+Figura 3: Separação alcançada por LD1
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+
+Figura 4: Separação alcançada por LD2.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+
+Percebe-se que para o discriminante LD1 houve um alcance de separação satisfatório frente a realizada pelo LD2, uma vez que os grupos 2 e 3 deste discriminante se sobrepõem nos outros grupos. O que não é observado no LD1, pois percebe-se claramente a separação entre os grupos.
+O teste de validação do modelo foi feito com o 20% dos dados restantes através da matriz
+de confusão. Esta matriz fornece o número de dados alocados em cada grupo pela predição do modelo e a real alocação. A matriz pode ser observada na Tabela 4 a seguir.
+
+Tabela 4: Matriz de confusão
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+
+Um modelo ideal teria uma matriz de confusão com todos os elementos, além da diagonal
+nulos. A matriz do modelo, em questão afirma que 7 dados do grupo 1 foram realocados no
+grupo 2 na predição do modelo. Mostrou ainda, que 42 dados do grupo 2 foram alocados
+para o grupo 1 e 12 dados do grupo 3 foram alocados no grupo 2 na predição. A partir dessa matriz, pode-se calcular o erro de predição do modelo.
+
+Eq.3
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+
+
+Onde, sd significa a soma da diagonal e st a soma de todos os elementos da matriz. Neste
+caso, o erro de predição foi igual a 6.623%.
+A análise para um discriminante quadrático revela a seguinte matriz de confusão mostrada
+na Figura 5 a seguir. Com um erro de 6.071% de erro de predição.
+
+Tabela 4: Matriz de confusão
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+
+### 4. Conclusão
+
+Os resultados obtidos com a análise de discriminantes e separação foram interessantes para grupo de dados. Ambos os erros de predição para os discriminantes linear e quadráticos foram praticamente iguais. O discriminante quadrático se mostrou um pouco melhor, com diferença de 0,552% no valor do erro, mostrando-se melhor na separação dos grupos. De acordo com a literatura, até 20% para o valor do erro de predição é aceito para o grupo de dados.
