@@ -394,7 +394,7 @@ O projeto consiste na aplicação de técnicas de análise de discriminantes em 
 
 Tabela 1: Referência das variáveis
       
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.1.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5tab1.PNG)
 
 ### 2. Método
 
@@ -417,14 +417,14 @@ populações diferentes. De acordo com a Tarefa anterior de clusters e os result
 
 Figura 1: Partição randômica dos dados das variáveis X4 e X5 em training e testing.
              
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5fig1.PNG)
 
 Como dito, os dadosforamagrupados, anteriormente, em 3 clusters pelométodoK-Means,
 apresentando umamatriz dasmédias para cada uma das variáveis observada na Tabela 2 abaixo.
 
 Tabela 2: Matriz das médias em cada cluster para cada variável.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5tab2.PNG)
 
 #### 3.1. Discriminante Linear
 
@@ -432,15 +432,15 @@ A partir dos dados particionados e das médias de cada variável em cada cluster
 
 Tabela 3: Coeficientes das variáveis nos discriminantes LD1 e LD2.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5tab3.PNG)
 
 Tais coeficientesrepresentam os pesos de cada variável em cada discriminante. Dessaforma, como este descriminante é linear, obtemos uma expressão para cada discriminante em função de cada variável, como observado nas equações abaixo:
 
 Eq. 1
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5eq1.PNG)
 
 Eq. 2
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%203.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5eq2.PNG)
 
 
 Nesta análise, pode-se observar quais são as variáveis que mais se destacam nos discriminantes gerados, a partir do seu peso. Neste caso, a variável X13 possui maior peso em módudo no discriminante LD1 e a variável X10 no discriminante LD2.
@@ -453,7 +453,7 @@ nos grupos, previamente separados. A Figura 2 ilustra essa interferência.
 
 Figura 2: LD1 versus LD2
                
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5fig2.PNG)
 
 Neste caso, percebe-se que o grupo 3 não possui grande interferência do discriminante
 LD2, uma vez que pela matriz das médias, observamos que este grupo foi agrupado com os
@@ -462,11 +462,11 @@ As Figuras 3 e 4 ilustradas a seguir, representam os alcances de separação das
 
 Figura 3: Separação alcançada por LD1
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5fig3.PNG)
 
 Figura 4: Separação alcançada por LD2.
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5fig4.PNG)
 
 Percebe-se que para o discriminante LD1 houve um alcance de separação satisfatório frente a realizada pelo LD2, uma vez que os grupos 2 e 3 deste discriminante se sobrepõem nos outros grupos. O que não é observado no LD1, pois percebe-se claramente a separação entre os grupos.
 O teste de validação do modelo foi feito com o 20% dos dados restantes através da matriz
@@ -474,7 +474,7 @@ de confusão. Esta matriz fornece o número de dados alocados em cada grupo pela
 
 Tabela 4: Matriz de confusão
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5tab4.PNG)
 
 Um modelo ideal teria uma matriz de confusão com todos os elementos, além da diagonal
 nulos. A matriz do modelo, em questão afirma que 7 dados do grupo 1 foram realocados no
@@ -483,17 +483,17 @@ para o grupo 1 e 12 dados do grupo 3 foram alocados no grupo 2 na predição. A 
 
 Eq.3
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5eq3.PNG)
 
 
 Onde, sd significa a soma da diagonal e st a soma de todos os elementos da matriz. Neste
 caso, o erro de predição foi igual a 6.623%.
 A análise para um discriminante quadrático revela a seguinte matriz de confusão mostrada
-na Figura 5 a seguir. Com um erro de 6.071% de erro de predição.
+na Tabela 5 a seguir. Com um erro de 6.071% de erro de predição.
 
-Tabela 4: Matriz de confusão
+Tabela 5: Matriz de confusão
 
-![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/Fig.%204.PNG)
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/5tab5.PNG)
 
 ### 4. Conclusão
 
