@@ -498,3 +498,132 @@ Tabela 5: Matriz de confusão
 ### 4. Conclusão
 
 Os resultados obtidos com a análise de discriminantes e separação foram interessantes para grupo de dados. Ambos os erros de predição para os discriminantes linear e quadráticos foram praticamente iguais. O discriminante quadrático se mostrou um pouco melhor, com diferença de 0,552% no valor do erro, mostrando-se melhor na separação dos grupos. De acordo com a literatura, até 20% para o valor do erro de predição é aceito para o grupo de dados.
+
+
+### Projeto 5: Redes Neurais
+
+### 1. Introdução 
+
+O projeto consiste na aplicação de redes neurais nos dados de uma unidade de evaporação de licor (N aCl(aq) e N aOHaq), constituída por três evaporadores em série. O licor e o vapor para aquecimento fluem em contracorrente. A nomeação das variáveis é dada pela Tabela 1.
+
+Tabela 1: Referência das Variáveis
+      
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6tab1.PNG)
+
+A aplicação de redes neurais foi realizada em dois casos: 1) A todas as variáveis disponíveis do proceso; e para as 2) variáveis que foram selecionadas na técnica de Componentes Principais na Tarefa 03. Neste caso, as variáveis foram: X1, X3, X4, X6, X7 e X8. Os dados foram normalizados, e particionados randômicamente para separar os grupos de dados de treinamento da rede e o grupo de teste. Para o grupo de treinamento, foram selecionados 80% dos dados e para o grupo de teste, os 20% dos dados restantes.
+
+### 2. Método
+
+#### 2.1. Redes Neurais Artificiais
+
+O final da década de 80 marcou o ressurgimento da área de Redes Neurais Artificiais (RNAs). Também conhecidas como conexionismo ou sistemas de processamento paralelo e distribuído. Esta forma de computação não-algorítimica é caracterizada por sistemas que, em algum nível, relembram, a estrutura do cérebro humano. Por não ser baseada em regras ou programas, a computação neural se constitui em yna alternativa à computação algorítmica convencional.
+A solução de problemas através de RNAs é bastante atrativa, já que a forma como estes
+são representados internamente pela rede e o paralelismo natural inerente à arquitetura das RNAs criam a possibilidade de um desempenho superior ao dos modelos convencionais. Em RNAs, o procedimento usual na solução de problemas passa inicialmente por uma fase de
+aprendizagem, em que um conjunto de exemplos é apresentado para a rede, a qual extrai automaticamente as características necessárias para representar a informação fornecida.
+
+#### 2.2. Funcionalidade
+
+Em uma rede multicamadas, o processamento realizado por cada nodo é definido pela combinação dos processamentos realizados pelos nodos da camada anterior que estão conectados a ele. Quando se segue da primeira camada intermediária em direção à camada de saída, as funções implementadas se tornam cada vez mais complexas. Estas funções definem como é realizada a divisão do espaço de decisão. Para uma rede com pelo menos duas camadas intermediárias, pode-se dizer que o seguinte processamento ocorre em cada uma das camadas:
+
+Primeira camada intermediária: cada nodo traça retas no espaço de padrões de treinamento.
+
+Segunda camada intermediária: cada nodo combina as retas traçadas pelos neurônios da
+camada anterior conectados a ele, formando regiões convexas, onde o número de lados é definido pelo número de unidades a ele conectadas.
+
+Camada de saída: a nodo forma regiões que são combinações das regiões convexas definidas pelos nodos a ele conectados da camada anterior. Os nodos definem, destamaneira, regiões
+com formatos abstratos.
+
+Pode ser dito que as unidades intermediárias de uma rede MLP funcionam como detectores de características. Elas geram uma codificação interna dos padrões de entrada, que é então utilizada para a definição da saída da rede. Dado um número suficientemente grande de unidades intermediárias, é possível formar representações internas para qualquer conjunto de padrões de entrada.
+
+Cybenko, além de outros pesquisadores, investigou o número de camadas intermediárias
+necessárias para a implementação de classes de funções em uma Rede Neural Artificial. Os
+resultados obtidos indicam que: uma camada intermediária é suficiente para aproximar qualquer função contínua e duas camadas intermediárias são suficientes para aproximar qualquer função matemática.
+
+Deve ser observado, contudo, que em alguns casos a utilização de duas ou mais camadas
+intermediárias pode facilitar o treinamento da rede. A utilização de um grande número de
+camadas intermediárias não é recomendada, no entanto, pois, cada vez que o erro medido
+durante o treinamento é propagado para a camada anterior, ele se torna menos útil ou preciso. A única camadaque tem uma noção precisa do erro cometido pela rede é a camada de saída. A última camada intermediária recebe apenas um estimativa sobre o erro. A penúltima camada intermediária, uma estimativa da estimativa, e assim por diante.
+
+O software utilizado para a aplicação das redes neurais neste trabalho foi o Rstudio, o qual dispõe de um pacote para essa finalidade (neuralnet). O algoritmo utilizado para o cálculo da rede neural foi o Rprop+ (default), de retropropagação resiliente com retrocesso de peso.
+
+#### 2.3. Algoritmo Rprop
+
+O algoritmo Rprop, de resilient back-propagation, é um algoritmo de adaptação global que
+realiza treinamento supervisionado batch em redes do tipo MLP. Este algoritmo procura eliminar a influência negativa do valor da derivada parcial na definição do ajuste dos pesos. Esta influência negativa ocorre porque, quando a saída de um nodo for próxima de 0 (ou 1) e a saída desejada for 1 (ou 0), a derivada será próxima de 0, fazendo com que os pesos deste nodo recebam um ajuste mínimo. quase igual a O.
+
+O algoritmo Rprop elimina este problema utilizando apenas o sinal da derivada, e não o
+seu valor. O sinal indica a direção do ajuste dos pesos (aumentar ou diminuir o peso anterior).
+
+### 3. Resultados e Discussão
+
+Foram testatos dois algoritmos na implementação das redes neurais para os dois conjuntos de dados: Rprop+ e Rprop-. Além disso, foram aplicados o mesmo número de neurônios na
+camada oculta para cada situação, visando observar o comportamento deles, através do coeficiente de correlação (R²). A Tabela 2 abaixo mostra os testes aplicados para os casos envolvidos:
+
+Tabela 2: Tabela de Testes para Redes Neurais.
+             
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6tab2.PNG)
+
+#### 3.1. Redes Neurais Artificiais- Todas as Variáveis
+
+Os resultados obtidos na partição randômica dos dados para este conjunto de variáveis é observado na Figura 1 a seguir:
+
+Figura 1: Conjunto de dados para treinamento e teste da rede neural
+             
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6fig1.PNG)
+
+Nesta Figura 1, é observada a partição randômica dos dados que serão destinados ao treinamento da rede e os dados destinados ao teste da rede. Os algoritmos aplicados na redes neurais para todas as variáveis foram satisfatórios, porém com ressalvas. A Tabela 3 mostram os resultados obtidos em cada caso.
+
+Tabela 3:  Coeficientes de correlação R² para todas as variáveis.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6tab3.PNG)
+
+Os resultados apresentados serão para o melhor valor de R² obtido nas simulações. Neste
+caso, A Figura 4 a seguir mostra a arquitetura da rede neural artificial, obtida através do algoritmo Rprop+, com 4 neurônios na camada oculta e um coeficiente de correlação de 0,9323.
+
+Figura 2: Arquitetura da Rede Neural Artificial para todas as variáveis.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6fig2.PNG)
+
+A Figura 3 mostra os dados do conjunto de treinamento previstos em função do observado
+pela rede neural e seu coeficiente de correlação R².
+
+Figura 3: Dados observados versus previstos.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6fig3.PNG)
+
+Pode-se observar que os dados estão bem correlacionados tanto no conjunto de treinamento da rede, bem como para os dados de teste. Nesse caso, a rede neural foi satisfatória.
+
+#### 3.2. Redes Neurais Artificiais - Variáveis do PCA
+
+Os resultados obtidos na partição randômica dos dados para este conjunto de variáveis é observado na Figura 4 a seguir:
+
+Figura 4: Conjunto de dados para treinamento e teste da rede neural.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6fig4.PNG)
+
+Nesta Figura 2, é observada a partição randômica dos dados que serão destinados ao treinamento da rede e os dados destinados ao teste da rede. Os algoritmos aplicados na redes neurais para todas as variáveis foram satisfatórios, porém com ressalvas. A Tabela 4 mostram os resultados obtidos em cada caso.
+
+Tabela 4: Coeficientes de correlação R² para as variáveis do PCA.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6tab4.PNG)
+
+Os resultados apresentados serão para o melhor valor de R² obtido nas simulações. Neste
+caso, A Figura 5 a seguir mostra a arquitetura da rede neural artificial, obtida através do algoritmo Rprop-, com 3 neurônios na camada oculta e um coeficiente de correlação de 0,7692.
+
+Figura 5: Arquitetura da Rede Neural Artificial para as variáveis do PCA.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6fig5.PNG)
+
+A Figura 6 mostra os dados do conjunto de treinamento previstos em função do observado
+pela rede neural e seu coeficiente de correlação R².
+
+Figura 6: Dados observados versus previstos.
+
+![](https://github.com/MariaClaraMendes/Portfolio-/blob/main/Images/6fig6.PNG)
+
+Já para o conjunto de variáveis escolhidos através da PCA, a correlação dos dados não foi satisfatória, observando dispersão dos dados na rede neural.
+
+
+### 4. Conclusão
+
+A aplicação da redes neurais artificiais foi bem mais satisfatória para o conjunto que engloba todas as variáveis do que para o conjunto de dados com as variáveis mais interferentes para o processo. Além disso, o melhor algoritmo para cada caso foi diferente em cada caso, bem como o número de neurônios na camada oculta, o que mostra que a quantidade de dados e varáveis interfere no método de obtenção da rede neural.
