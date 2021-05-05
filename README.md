@@ -428,7 +428,7 @@ Tabela 2: Matriz das médias em cada cluster para cada variável.
 
 #### 3.1. Discriminante Linear
 
-A partir dos dados particionados e das médias de cada variável em cada cluster, calcula-se os coeficientes dos discriminantes lineares, a partir da função lda() observados na Figura 3 abaixo:
+A partir dos dados particionados e das médias de cada variável em cada cluster, calcula-se os coeficientes dos discriminantes lineares, a partir da função lda() observados na Tabela 3 abaixo:
 
 Tabela 3: Coeficientes das variáveis nos discriminantes LD1 e LD2.
 
